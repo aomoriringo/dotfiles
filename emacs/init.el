@@ -12,25 +12,6 @@
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
-;;; 補完機能
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
-(ac-config-default)
-
-;;; color theme
-(add-to-list 'load-path "~/.emacs.d/elisp/color-theme-6.6.0")
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-clarity)
-
-;;; haskell-mode
-(add-to-list 'load-path "~/.emacs.d/elisp/haskell-mode-2.8.0")
-(require 'haskell-mode)
-(require 'haskell-cabal)
-(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
-(add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
-(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
-
 ;;; Localeに合わせた環境の設定
 (set-locale-environment nil)
 
@@ -43,8 +24,6 @@
 		'japanese-jisx0208
 		'("Ricty" . "iso10646-1"))
 
-;;; ==================================================
-
 ;;; キーバインド
 (define-key global-map "\C-h" 'delete-backward-char) ; 削除
 (define-key global-map "\M-?" 'help-for-help)        ; ヘルプ
@@ -56,8 +35,6 @@
 ;(define-key global-map "\C-o" 'toggle-input-method)  ; 日本語入力切替
 (define-key global-map "\C-\\" nil) ; \C-\の日本語入力の設定を無効にする
 ;(define-key global-map "\C-c " 'other-frame)         ; フレーム移動
-
-;;; ===================================================
 
 ;;; 初期フレームの設定
 (setq initial-frame-alist
@@ -72,7 +49,7 @@
 (setq default-frame-alist
       (append
        '((width               . 81)	; フレーム幅(文字数)
-	 (height              . 50))	; フレーム高(文字数)	
+	 (height              . 50))	; フレーム高(文字数)
        default-frame-alist))
 
 
@@ -91,15 +68,6 @@
 ;;; 補完時に大文字小文字を区別しない
 (setq completion-ignore-case t)
 
-;;; 強力な補完機能を使う
-;;; p-bでprint-bufferとか
-;;(load "complete")
-(partial-completion-mode 1)
-
-;;; 補完可能なものを随時表示
-;;; 少しうるさい
-;(icomplete-mode 1)
-
 ;;; カーソルの点滅を止める
 (blink-cursor-mode 0)
 
@@ -114,6 +82,16 @@
 
 ;;; モードラインに時間を表示する
 (display-time)
+
+;;; 補完機能
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
+(ac-config-default)
+
+;;; 行末スペースに色付け
+(when (boundp 'show-trailing-whitespace)
+  (setq-default show-trailing-whitespace t))
+(set-face-background 'trailing-whitespace "plum")
 
 ;;; 現在の関数名をモードラインに表示
 (which-function-mode 1)
@@ -130,5 +108,56 @@
   ;; If there is more than one, they won't work right.
  )
 
+;;; Shiftバッファ移動
+(setq windmove-wrap-around t)
+(windmove-default-keybindings)
 
+;;; color theme
+(add-to-list 'load-path "~/.emacs.d/elisp/color-theme-6.6.0")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-clarity)
+
+;;; ===================================================
+
+;;; twittering-mode
+(add-to-list 'load-path "~/.emacs.d/elisp/twittering-mode-3.0.0")
+(require 'twittering-mode)
+;;; 起動時パスワード認証 (require gpg command)
+(setq twittering-use-master-password t)
+(setq twittering-username "aomoriringo")
+(setq twittering-password "M0y4s3a3")
+;;; 表示形式
+(setq twittering-status-format "%i @%s %S %p: \n %T\n[%@]%r %R")
+;;; アイコンを表示する
+(setq twittering-icon-mode t)
+;;; アイコンサイズ変更 (require convert command)
+(setq twittering-convert-fix-size 30)
+;;; 更新頻度(sec)
+(setq twittering-timer-interval 40)
+;;; 最初に開くタイムライン
+(setq twittering-initial-timeline-spec-string
+      '("aomoriringo/encount")
+)
+
+;;; ===================================================
+
+;;; haskell-mode
+(add-to-list 'load-path "~/.emacs.d/elisp/haskell-mode-2.8.0")
+(require 'haskell-mode)
+(require 'haskell-cabal)
+(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+
+;;; ===================================================
+
+;;; js2-mode
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;;; js-indentation
+(setq-default js2-basic-offset 2)
+
+;;; ===================================================
 
