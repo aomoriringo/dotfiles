@@ -125,8 +125,8 @@
 (require 'twittering-mode)
 ;;; 起動時パスワード認証 (require gpg command)
 (setq twittering-use-master-password t)
-(setq twittering-username "aomoriringo")
-(setq twittering-password "M0y4s3a3")
+(setq twittering-username "youraccount")
+(setq twittering-password "yourpassword")
 ;;; 表示形式
 (setq twittering-status-format "%i @%s %S %p: \n %T\n[%@]%r %R")
 ;;; アイコンを表示する
@@ -137,7 +137,7 @@
 (setq twittering-timer-interval 40)
 ;;; 最初に開くタイムライン
 (setq twittering-initial-timeline-spec-string
-      '("aomoriringo/encount")
+      '("accountname/listname")
 )
 
 ;;; ===================================================
@@ -161,3 +161,7 @@
 
 ;;; ===================================================
 
+;;; lingr
+(require 'lingr)
+(setq lingr-username youraccount
+      lingr-password yourpassword)
