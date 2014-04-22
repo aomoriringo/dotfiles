@@ -17,12 +17,12 @@
 
 ;;; フォント設定
 (set-face-attribute 'default nil
-		:family "Ricty"
-		:height 120)
+                :family "Ricty"
+                :height 120)
 (set-fontset-font
-		(frame-parameter nil 'font)
-		'japanese-jisx0208
-		'("Ricty" . "iso10646-1"))
+                (frame-parameter nil 'font)
+                'japanese-jisx0208
+                '("Ricty" . "iso10646-1"))
 
 ;;; キーバインド
 (define-key global-map "\C-h" 'delete-backward-char) ; 削除
@@ -120,13 +120,24 @@
 
 ;;; ===================================================
 
+;;; jaspace.el
+(require 'jaspace)
+
+;;; タブ記号を表示
+(setq jaspace-highlight-tabs t)
+;(defface jaspace-highlight-tab-face
+;  '((t (:background "plum"))) nil)
+(set-face-background 'jaspace-highlight-tab-face "plum")
+
+;;; ===================================================
+
 ;;; twittering-mode
 (add-to-list 'load-path "~/.emacs.d/elisp/twittering-mode-3.0.0")
 (require 'twittering-mode)
 ;;; 起動時パスワード認証 (require gpg command)
 (setq twittering-use-master-password t)
-(setq twittering-username "youraccount")
-(setq twittering-password "yourpassword")
+(setq twittering-username "aomoriringo")
+(setq twittering-password "M0y4s3a3")
 ;;; 表示形式
 (setq twittering-status-format "%i @%s %S %p: \n %T\n[%@]%r %R")
 ;;; アイコンを表示する
@@ -137,7 +148,7 @@
 (setq twittering-timer-interval 40)
 ;;; 最初に開くタイムライン
 (setq twittering-initial-timeline-spec-string
-      '("accountname/listname")
+      '("aomoriringo/encount")
 )
 
 ;;; ===================================================
@@ -163,5 +174,8 @@
 
 ;;; lingr
 (require 'lingr)
-(setq lingr-username youraccount
-      lingr-password yourpassword)
+(setq lingr-username "aomoriringo"
+      lingr-password "synesthesia")
+(setq lingr-icon-mode t)
+(setq lingr-image-convert-program "/usr/bin/convert")
+(setq lingr-icon-fix-size 24)
