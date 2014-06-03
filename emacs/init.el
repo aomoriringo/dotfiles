@@ -139,8 +139,8 @@
 (require 'twittering-mode)
 ;;; 起動時パスワード認証 (require gpg command)
 (setq twittering-use-master-password t)
-(setq twittering-username "aomoriringo")
-(setq twittering-password "M0y4s3a3")
+(setq twittering-username "")
+(setq twittering-password "")
 ;;; 表示形式
 (setq twittering-status-format "%i @%s %S %p: \n %T\n[%@]%r %R")
 ;;; アイコンを表示する
@@ -177,8 +177,8 @@
 
 ;;; lingr
 (require 'lingr)
-(setq lingr-username "aomoriringo"
-      lingr-password "synesthesia")
+(setq lingr-username ""
+      lingr-password "")
 (setq lingr-icon-mode t)
 (setq lingr-image-convert-program "/usr/bin/convert")
 (setq lingr-icon-fix-size 24)
