@@ -40,18 +40,21 @@
 (setq initial-frame-alist
       (append
        '((top                 . 22)    ; フレームの Y 位置(ピクセル数)
-	 (left                . 600)   ; フレームの X 位置(ピクセル数)
-	 (width               . 81)    ; フレーム幅(文字数)
-	 (height              . 50))   ; フレーム高(文字数)
+         (left                . 600)   ; フレームの X 位置(ピクセル数)
+         (width               . 160)    ; フレーム幅(文字数)
+         (height              . 46))   ; フレーム高(文字数)
        initial-frame-alist))
 
 ;;; 新規フレームのデフォルト設定
 (setq default-frame-alist
       (append
-       '((width               . 81)	; フレーム幅(文字数)
-	 (height              . 50))	; フレーム高(文字数)
+       '((width               . 81)     ; フレーム幅(文字数)
+         (height              . 50))    ; フレーム高(文字数)
        default-frame-alist))
 
+;;; 起動時に2分割
+(setq w (selected-window))
+(setq w2 (split-window w nil t))
 
 ;;; 対応する括弧を光らせる。
 (show-paren-mode 1)
