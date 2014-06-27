@@ -33,6 +33,7 @@ augroup END
 """""""""""""""""""""
 " remap
 """""""""""""""""""""
+noremap <CR> o<ESC>
 inoremap <Right> <nop>
 inoremap <Left> <nop>
 inoremap <Up> <nop>
