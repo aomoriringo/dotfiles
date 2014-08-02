@@ -33,7 +33,7 @@ augroup END
 """""""""""""""""""""
 " remap
 """""""""""""""""""""
-noremap <CR> o<ESC>
+noremap <CR> O<ESC>
 inoremap <Right> <nop>
 inoremap <Left> <nop>
 inoremap <Up> <nop>
@@ -58,6 +58,18 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'rsmenon/vim-mathematica'
+
+""""""""""""""""""""""
+" neobundle - textobj
+""""""""""""""""""""""
+" 関数の引数
+" a, i
+NeoBundle 'sgur/vim-textobj-parameter'
+
+" インデント
+" al, il
+NeoBundle 'kana/vim-textobj-indent'
+
 
 filetype plugin indent on
 NeoBundleCheck
