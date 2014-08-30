@@ -17,7 +17,7 @@ set conceallevel=2
 set list                 " 不可視文字の表示
 set listchars=tab:^\ ,trail:~
 set smartindent
-
+set backspace=indent,start,eol
 
 """""""""""""""""""""""""
 " Highlight end spaces
@@ -64,11 +64,11 @@ NeoBundle 'rsmenon/vim-mathematica'
 """"""""""""""""""""""
 " 関数の引数
 " a, i
-NeoBundle 'sgur/vim-textobj-parameter'
+"NeoBundle 'sgur/vim-textobj-parameter'
 
 " インデント
 " al, il
-NeoBundle 'kana/vim-textobj-indent'
+"NeoBundle 'kana/vim-textobj-indent'
 
 
 filetype plugin indent on
