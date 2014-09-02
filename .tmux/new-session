@@ -1,0 +1,18 @@
+# bash window
+split-window -h -p 50 -t 1
+
+# vim window
+new-window -t 2 -n vim
+
+# number_bot window
+new-window -t 3 -n number_bot
+split-window -h -p 50 -t 3
+
+# process window
+new-window -t 4 -n kompira_process
+split-window -h -p 50
+split-window -v -p 50 -t 0
+split-window -v -p 50 -t 1
+
+select-window -t 1
+select-pane -t 0
