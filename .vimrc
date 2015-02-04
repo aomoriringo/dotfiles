@@ -54,10 +54,11 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'modsound/gips-vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'rsmenon/vim-mathematica'
+NeoBundle 'vim-jp/vital.vim'
 
 call neobundle#end()
 
@@ -86,3 +87,9 @@ colorscheme badwolf
 """""""""""""""""""""
 let g:mma_candy=1
 let g:mma_hightlight_option = "badwolf"
+
+"""""""""""""""""""""
+" vital.vim
+"""""""""""""""""""""
+set runtimepath+=~/.vim/bundle/vital.vim
+
