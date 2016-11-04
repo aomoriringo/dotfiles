@@ -40,42 +40,34 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 
 """"""""""""""""""""""
-"neobundle
+" dein
 """"""""""""""""""""""
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+" $ sh ./installer.sh ~/.vim/bundle/dein.vim
+
+if &compatible
+    set nocompatible
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=~/.vim/bundle/dein.vim/repos/github.com/Shougo/dein.vim
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'modsound/gips-vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'sjl/badwolf'
-NeoBundle 'rsmenon/vim-mathematica'
-NeoBundle 'vim-jp/vital.vim'
-
-call neobundle#end()
-
-""""""""""""""""""""""
-" neobundle - textobj
-""""""""""""""""""""""
-" 関数の引数
-" a, i
-"NeoBundle 'sgur/vim-textobj-parameter'
-
-" インデント
-" al, il
-"NeoBundle 'kana/vim-textobj-indent'
-
+call dein#begin('~/.vim/bundle/dein.vim/')
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimproc')
+call dein#add('modsound/gips-vim')
+call dein#add('itchyny/lightline.vim')
+call dein#add('mattn/webapi-vim')
+call dein#add('mattn/gist-vim')
+call dein#add('ujihisa/unite-colorscheme')
+call dein#add('sjl/badwolf')
+call dein#add('rsmenon/vim-mathematica')
+call dein#add('vim-jp/vital.vim')
+call dein#end()
 
 filetype plugin indent on
-NeoBundleCheck
+syntax enable
+
 
 """""""""""""""""""""
 " colorscheme
