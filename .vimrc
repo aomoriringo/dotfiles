@@ -85,3 +85,14 @@ let g:mma_hightlight_option = "badwolf"
 """""""""""""""""""""
 set runtimepath+=~/.vim/bundle/vital.vim
 
+"""""""""""""""""""""
+" golang
+"""""""""""""""""""""
+if expand("%:t") =~ ".*\.go"
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+endif
+
+
+
