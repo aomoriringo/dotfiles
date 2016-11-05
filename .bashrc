@@ -11,27 +11,15 @@ function cdls() {
     ls;
 }
 
-function share_history {
-  history -a
-  history -c
-  history -r
-}
-
-# avaiable ctrl-s (search forward)
-stty stop undef
-
-# history size
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-
+eval `dircolors ~/.colorrc`
+alias ls='ls -F --color=auto'
 alias rm='rm -i'
 alias cd=cdls
 
 if [ $SHLVL = 1 ]; then
-  alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux/new-session"
+  alias tmux="tmux attach-session || tmux new-session \; source-file ~/.tmux/new-session"
 fi
 
+export EPYTHON=python3.4
+export PATH=$PATH:~/.cabal/bin:~/.vim/bundle/vim-themis/bin
 unset SSH_ASKPASS
-
-PROMPT_COMMAND='share_history'
-shopt -u histappend
