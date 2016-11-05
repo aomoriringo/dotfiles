@@ -8,7 +8,7 @@ fi
 # User specific aliases and functions
 function cdls() {
     \cd $1;
-    ls;
+    ls -F --color=auto;
 }
 
 eval `dircolors ~/.colorrc`
