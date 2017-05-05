@@ -51,19 +51,35 @@ endif
 
 set runtimepath+=~/.vim/bundle/dein.vim/repos/github.com/Shougo/dein.vim
 
-call dein#begin('~/.vim/bundle/dein.vim/')
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc')
-call dein#add('modsound/gips-vim')
-call dein#add('itchyny/lightline.vim')
-call dein#add('mattn/webapi-vim')
-call dein#add('mattn/gist-vim')
-call dein#add('ujihisa/unite-colorscheme')
-call dein#add('sjl/badwolf')
-call dein#add('rsmenon/vim-mathematica')
-call dein#add('vim-jp/vital.vim')
-call dein#end()
+if dein#load_state('~/.vim/bundle/dein.vim')
+    call dein#begin('~/.vim/bundle/dein.vim')
+
+    " Let dein manage dein
+    " Required:
+    call dein#add('~/.vim/bundle/dein.vim/repos/github.com/Shougo/dein.vim')
+
+    " Add or remove your plugins here:
+    " call dein#add('Shougo/neosnippet.vim')
+    " call dein#add('Shougo/neosnippet-snippets')
+    " You can specify revision/branch/tag.
+    " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+    call dein#add('Shougo/dein.vim')
+    call dein#add('Shougo/unite.vim')
+    call dein#add('Shougo/vimproc')
+    call dein#add('modsound/gips-vim')
+    call dein#add('itchyny/lightline.vim')
+    call dein#add('mattn/webapi-vim')
+    call dein#add('mattn/gist-vim')
+    call dein#add('ujihisa/unite-colorscheme')
+    call dein#add('sjl/badwolf')
+    call dein#add('rsmenon/vim-mathematica')
+    call dein#add('vim-jp/vital.vim')
+
+    " Required:
+    call dein#end()
+    call dein#save_state()
+endif
 
 filetype plugin indent on
 syntax enable
