@@ -20,6 +20,5 @@ if [ $SHLVL = 1 ]; then
   alias tmux="tmux attach-session || tmux new-session \; source-file ~/.tmux/new-session"
 fi
 
-export EPYTHON=python3.4
 export PATH=$PATH:~/.cabal/bin:~/.vim/bundle/vim-themis/bin
 unset SSH_ASKPASS
