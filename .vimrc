@@ -38,6 +38,19 @@ inoremap <Right> <nop>
 inoremap <Left> <nop>
 inoremap <Up> <nop>
 inoremap <Down> <nop>
+tnoremap <Esc> <C-w><S-n>
+
+"""""""""""""""""""""
+" default
+" nerdtree + terminal
+"""""""""""""""""""""
+function! s:open_term()
+  call feedkeys(":NERDTree\<CR>\<C-w>l:rightbelow terminal ++rows=4\<CR>\<C-w>h")
+endfunction
+
+if !argc()
+  autocmd vimenter * call s:open_term()
+endif
 
 """"""""""""""""""""""
 " dein
