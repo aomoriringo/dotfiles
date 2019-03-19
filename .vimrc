@@ -77,6 +77,9 @@ if dein#load_state('~/.vim/bundle/dein.vim')
     call dein#add('vim-jp/vital.vim')
     call dein#add('PProvost/vim-ps1')
     call dein#add('fatih/vim-go')
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('racer-rust/vim-racer')
 
     " Required:
     call dein#end()
@@ -112,5 +115,11 @@ if expand("%:t") =~ ".*\.go"
   set shiftwidth=4
 endif
 
-
+"""""""""""""""""""""
+" rust
+"""""""""""""""""""""
+if expand("%:t") =~ ".*\.rs"
+  set tabstop=4
+  set shiftwidth=4
+endif
 
