@@ -75,6 +75,8 @@ if dein#load_state('~/.vim/bundle/dein.vim')
     call dein#add('sjl/badwolf')
     call dein#add('rsmenon/vim-mathematica')
     call dein#add('vim-jp/vital.vim')
+    call dein#add('PProvost/vim-ps1')
+    call dein#add('fatih/vim-go')
 
     " Required:
     call dein#end()

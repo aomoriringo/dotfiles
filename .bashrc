@@ -11,7 +11,7 @@ function cdls() {
     ls -F --color=auto;
 }
 
-eval `dircolors ~/.colorrc`
+eval $(dircolors ~/.colorrc)
 alias ls='ls -F --color=auto'
 alias rm='rm -i'
 alias cd=cdls
