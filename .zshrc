@@ -13,7 +13,8 @@ alias gls="gls --color"
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # set prompt
-PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color} "
+# PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color} "
+PS1="%{$fg[cyan]%}[${USER} %1~]%(!.#.$)${reset_color} "
 
 # EDITOR
 export EDITOR=vim
@@ -23,6 +24,10 @@ export PATH=$PATH:~/.vim/bundle/dein.vim/repos/github.com/thinca/vim-themis/bin/
 # direnv
 eval "$(direnv hook zsh)"
 
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 # rbenv
-export PATH=$PATH:$HOME/.rbenv/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
