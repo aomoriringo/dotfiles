@@ -12,12 +12,14 @@ set noswapfile
 set encoding=utf8
 set fileencoding=utf8
 set infercase            " 文字がない場所へのカーソル移動
+set belloff=all          " ビープ音を鳴らさない
 
 set list                 " 不可視文字の表示
 set listchars=tab:^\ ,trail:~
 set smartindent
 set backspace=indent,start,eol
 set mouse=a
+set hlsearch
 
 """""""""""""""""""""""""
 " Highlight end spaces
